@@ -25,7 +25,7 @@ function MoviesPage() {
   const [rates, setRates] = useState(RatesData[0]);
   const [language, setLanguage] = useState(LanguageData[0]);
   const sameClass =
-    "text-white py-2 px-4 rounded font-semibold border-2 border-subMain hover:bg-subMain";
+    "text-white py-2 px-4 rounded font-semibold border-2 border-subMain hover:bg-subMain cursor-pointer";
   // all movies
   const { isLoading, isError, movies, pages, page } = useSelector(
     (state) => state.getAllMovies
@@ -92,7 +92,7 @@ function MoviesPage() {
     <Layout>
       <div className="min-height-screen container mx-auto px-2 my-6">
         <Filters data={datas} />
-        <p className="text-lg font-medium my-6">
+        <p className="text-lg font-medium my-6 ">
           Total{" "}
           <span className="font-bold text-subMain">
             {movies ? movies?.length : 0}

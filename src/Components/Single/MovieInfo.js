@@ -3,8 +3,10 @@ import { FaPlay, FaShareAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import FlexMovieItems from "../FlexMovieItems";
 import Rating from "../Stars";
+import { useSelector } from "react-redux";
 
 function MovieInfo({ movie, setModalOpen, progress }) {
+  const { userInfo } = useSelector((state) => state.userLogin);
   return (
     <div className="w-full xl:h-screen relative text-white">
       <img
@@ -54,14 +56,23 @@ function MovieInfo({ movie, setModalOpen, progress }) {
                   </p>
                 </div>
                 {/* watch button */}
-                <div className="sm:col-span-2 col-span-3 flex justify-end font-medium text-sm">
+                {userInfo ? (
+                  <div className="sm:col-span-2 col-span-3 flex justify-end font-medium text-sm">
+                    <Link
+                      to={`/watch/${movie?._id}`}
+                      className="bg-dry py-4 hover:bg-subMain transitions border-2 border-subMain rounded-full flex-rows gap-4 w-full sm:py-3"
+                    >
+                      <FaPlay className="w-3 h-3" /> Watch
+                    </Link>
+                  </div>
+                ) : (
                   <Link
-                    to={`/watch/${movie?._id}`}
-                    className="bg-dry py-4 hover:bg-subMain transitions border-2 border-subMain rounded-full flex-rows gap-4 w-full sm:py-3"
+                    to="/login"
+                    className="bg-main border border-dashed border-border text-subMain py-2  w-48 flex-colo rounded"
                   >
-                    <FaPlay className="w-3 h-3" /> Watch
+                    Payment to Watch
                   </Link>
-                </div>
+                )}
               </div>
               {/* ratings */}
               <div className="flex mb-6 text-lg gap-2 text-star">

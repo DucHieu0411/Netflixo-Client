@@ -41,16 +41,9 @@ export const RatesData = [
 
 export const TimesData = [
   { title: "Sort By Hours" },
-  { title: "1 Hours" },
   { title: "2 Hours" },
   { title: "3 Hours" },
   { title: "4 Hours" },
-  { title: "5 Hours" },
-  { title: "6 Hours" },
-  { title: "7 Hours" },
-  { title: "8 Hours" },
-  { title: "9 Hours" },
-  { title: "10 Hours" },
 ];
 
 export const YearData = [

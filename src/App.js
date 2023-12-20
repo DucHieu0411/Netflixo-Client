@@ -28,6 +28,7 @@ import { getFavoriteMoviesAction } from "./Redux/Actions/userActions";
 import toast from "react-hot-toast";
 import EditMovie from "./Screens/Dashboard/Admin/EditMovie";
 import Payment from "./Screens/Dashboard/Payment";
+import Thanks from "./Screens/Thanks";
 
 function App() {
   Aos.init();
@@ -66,6 +67,7 @@ function App() {
           <Route path="/watch/:id" element={<WatchPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/thanks" element={<Thanks />} />
           <Route path="*" element={<NotFound />} />
           {/* ************ PRIVATE PUBLIC ROUTERS *************** */}
           <Route element={<ProtectedRouter />}>
