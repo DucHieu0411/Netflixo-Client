@@ -20,7 +20,7 @@ const movieValidation = yup.object().shape({
   desc: yup
     .string()
     .required("Please enter a movie description")
-    .max(300, "Movie description should be less than 300 characters"),
+    .max(1000, "Movie description should be less than 1000 characters"),
 });
 
 export { ReviewValidation, movieValidation };
